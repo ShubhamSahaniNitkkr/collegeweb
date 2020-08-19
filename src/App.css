@@ -31,3 +31,12 @@ body {
 .text-bright {
   color: var(--lightBlue);
 }
+
+div {
+  font-family: googlefont;
+}
+
+code {
+  font-family: googlefont;
+  background-color: red;
+}
