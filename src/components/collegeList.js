@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Product from './product';
+import College from './college';
 import Title from './title';
 import { ProductConsumer } from '../context';
 
@@ -7,13 +7,13 @@ export default class ProductList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Title name='Our' title='Products' />
+        <Title name='Our' title='Top Colleges' />
 
-        <div className='row'>
+        <div className='row p-5'>
           <ProductConsumer>
             {(value) => {
-              return value.products.map((product) => {
-                return <Product key={product.id} product={product} />;
+              return value.colleges.map((college, idx) => {
+                return <College key={idx} college={college} />;
               });
             }}
           </ProductConsumer>

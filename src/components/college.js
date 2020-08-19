@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 export default class Product extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props.product;
+    const { id, title, img, price, inCart } = this.props.college;
     return (
-      <div className='col-md-3'>
+      <div className='col-md-6'>
         <ProductConsumer>
           {(value) => (
             <div
@@ -60,7 +60,7 @@ export default class Product extends Component {
 }
 
 Product.propTypes = {
-  product: PropTypes.shape({
+  college: PropTypes.shape({
     id: PropTypes.number,
     img: PropTypes.string,
     title: PropTypes.string,

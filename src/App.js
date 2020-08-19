@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from './components/navbar';
-import ProductList from './components/productList';
+import CollegeList from './components/collegeList';
 import Default from './components/Default';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={ProductList} />
+          <Route exact path='/' component={CollegeList} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>
