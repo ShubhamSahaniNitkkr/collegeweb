@@ -5,51 +5,39 @@ import PropTypes from 'prop-types';
 
 export default class Product extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props.college;
+    const {
+      college_name,
+      promoted,
+      rating,
+      rating_remarks,
+      tags,
+      original_fees,
+      discounted_fees,
+      famous_nearest_places,
+      amenties,
+      discount,
+      fees_cycle,
+      image,
+      offertext,
+      ranking,
+    } = this.props.college;
     return (
       <div className='col-md-6'>
         <ProductConsumer>
           {(value) => (
-            <div
-              className='card mx-auto my-2 shadow-sm p-3 mb-5 bg-white rounded'
-              onClick={() => value.handleDetails(id)}
-            >
-              <Link to='/details'>
-                <img
-                  src={img}
-                  className='card-img-top'
-                  alt={title}
-                  onClick={() => value.closeModal()}
-                />
-              </Link>
-              <div className='card-body p-0'>
-                <h5 className='card-title text-truncate'>{title}</h5>
-                <p className='card-text'>Price : ${price}</p>
-                <hr />
-                <div>
-                  <Link
-                    to='/details'
-                    className='btn btn-outline-primary'
-                    onClick={() => {
-                      value.handleDetails(id);
-                      value.closeModal();
-                    }}
-                  >
-                    Details
-                  </Link>
+            <div className='card mx-auto my-2 shadow-sm p-3 mb-5 bg-white rounded'>
+              <img
+                src={`img/${image}`}
+                className='card-img-top'
+                alt={college_name}
+              />
+              <br />
 
-                  <button
-                    className='btn btn-outline-info'
-                    disabled={inCart ? true : false}
-                    onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
-                    }}
-                  >
-                    <i className='fas fa-shopping-bag'></i>{' '}
-                    {inCart ? 'In ' : 'Add to '} Cart{' '}
-                  </button>
-                </div>
+              <div className='card-body p-0'>
+                <h5 className='card-title text-truncate'>{college_name}</h5>
+                <p className='card-text'>Price : </p>
+                <hr />
+                <div></div>
               </div>
             </div>
           )}

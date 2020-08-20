@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
-import { detailProduct } from './data';
 import colleges from './colleges.json';
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
   state = {
     colleges: [],
-    detailProduct: detailProduct,
-    cart: [],
-    modlaOpen: true,
-    modalProduct: detailProduct,
-    cartSubTotal: 0,
-    cartTax: 0,
-    cartTotal: 0,
+    limit: 10,
+    page: 0,
   };
+
   componentDidMount() {
-    this.setCollegeList();
+    this.setCollegeList(this.sliceArrUtil(colleges.colleges));
+    window.addEventListener('scroll', this.handleScroll);
   }
 
-  setCollegeList = () => {
-    let tempColleges = [],
-      collegeArr = colleges.colleges,
-      limit = 10;
-    for (let college of collegeArr) {
+  handleScroll = (e) => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      this.setCollegeList(this.sliceArrUtil(colleges.colleges));
+    }
+  };
+
+  sliceArrUtil = (list) => {
+    let limit = this.state.limit;
+    var start = limit * this.state.page;
+    return list.slice(start, start + limit);
+  };
+
+  setCollegeList = (collegeArr) => {
+    let tempColleges = this.state.colleges,
+      page = this.state.page;
+
+    collegeArr.map((college) => {
       const singleItem = { ...college };
       tempColleges = [...tempColleges, singleItem];
-      limit--;
-      if (!limit) break;
-    }
+    });
+
     this.setState(() => {
-      return { colleges: tempColleges };
+      return { colleges: tempColleges, page: page + 1 };
     });
   };
 
