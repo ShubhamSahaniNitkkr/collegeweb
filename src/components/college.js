@@ -47,6 +47,17 @@ export default class Product extends Component {
     return items;
   };
 
+  renderEnemities = (enemities) => {
+    let items = enemities.map((enem, idx) => {
+      return (
+        <span key={idx} className={`mr-2 text-success text-truncate`}>
+          - {enem}
+        </span>
+      );
+    });
+    return items;
+  };
+
   render() {
     const {
       college_name,
@@ -65,7 +76,6 @@ export default class Product extends Component {
       offertext,
       ranking,
     } = this.props.college;
-    console.log(this.props.college);
 
     return (
       <div className='col-md-6 p-1'>
@@ -111,11 +121,11 @@ export default class Product extends Component {
 
           <div className='card-body p-3'>
             <div className='row'>
-              <div className='col-md-8'>
-                <h5 className='card-title text-truncate'>
+              <div className='col-md-9 col-xs-12'>
+                <h6 className='card-title text-truncate mr-3'>
                   {college_name}
-                  <span className='ml-3'>{this.renderRatings(rating)}</span>
-                </h5>
+                  <p>{this.renderRatings(rating)}</p>
+                </h6>
                 <p className='card-text'>
                   {this.renderNearestPlaces(nearest_place)}
                 </p>
@@ -123,25 +133,27 @@ export default class Product extends Component {
                   <span className='text-success'>93% Match : </span>
                   {famous_nearest_places}
                 </p>
-                <span className='card-text offertxt'>{offertext}</span>
+                <p className='card-text offertxt mb-2'>{offertext}</p>
               </div>
 
-              <div className='col-md-4'>
+              <div className='col-md-3 col-xs-12 text-right'>
                 <span className='card-text'>
                   <i className='fas fa-rupee-sign'></i>{' '}
                   <del>{original_fees}</del>
                   <i
-                    className='fas fa-tag text-danger ml-1'
+                    className='fas fa-tag text-danger ml-2'
                     style={{ transform: 'rotate(-45deg)' }}
                   ></i>
                   <span className='text-danger'>{discount}%</span>
                 </span>
                 <br />
-                <span className='card-text text-danger'>
-                  <i className='fas fa-rupee-sign'></i> {discounted_fees} <br />{' '}
-                  {fees_cycle}{' '}
+                <span className='card-text text-danger h2'>
+                  <i className='fas fa-rupee-sign'></i> {discounted_fees}{' '}
                 </span>
-                <p className='card-text text-success'>{amenties}</p>
+                <span>{fees_cycle}</span>
+                {/* <p className='card-text text-success'>
+                  {this.renderEnemities(amenties)}
+                </p> */}
               </div>
             </div>
           </div>
