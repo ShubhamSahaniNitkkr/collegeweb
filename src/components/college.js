@@ -7,7 +7,7 @@ export default class Product extends Component {
     else if (remarks <= 2) return 'primary';
     else if (remarks <= 3) return 'warning';
     else if (remarks <= 4) return 'info';
-    else return 'success';
+    else return 'green';
   };
 
   renderTags = (tags) => {
@@ -16,7 +16,7 @@ export default class Product extends Component {
         <button
           type='button'
           key={idx}
-          className='btn btn-light mr-2 tag-button'
+          className='button light-button ml2 tag-button'
         >
           {tag}
         </button>
@@ -28,9 +28,9 @@ export default class Product extends Component {
   renderRatings = (ratings) => {
     let items = [1, 2, 3, 4, 5].map((star, idx) => {
       return ratings >= star ? (
-        <i key={idx} className='fas fa-star'></i>
+        <i key={idx} className='fas fa-star war-txt'></i>
       ) : (
-        <i key={idx} className='far fa-star'></i>
+        <i key={idx} className='far fa-star war-txt'></i>
       );
     });
     return items;
@@ -78,15 +78,15 @@ export default class Product extends Component {
     } = this.props.college;
 
     return (
-      <div className='col-md-6 p-1'>
+      <div className='screen-1-2 p1'>
         {promoted && (
-          <p className='text-right'>
+          <p className='textright'>
             <span className='prom'>PROMOTED</span>
           </p>
         )}
-        <div className='card mx-auto my-2 shadow-sm mb-5 bg-white rounded'>
+        <div className='square mrauto normal-shadow white-bg'>
           <div
-            className='background card-img-top'
+            className='background'
             style={{
               backgroundImage: `url(img/${image})`,
               position: 'relative',
@@ -95,63 +95,60 @@ export default class Product extends Component {
             }}
           >
             <div className='b-layer'>
-              <div className='col-md-12 dflex justifycontentend mt-5'>
+              <div className='screen-1 dflex justifycontentend mt5 ml1'>
                 <button
                   type='button'
-                  className={`btn btn-${this.renderButtonColor(
+                  className={`button ${this.renderButtonColor(
                     rating_remarks
-                  )}`}
+                  )}-button`}
                 >
                   {rating} / 5
                   <br />
                   {rating_remarks}
                 </button>
               </div>
-              <div className='col-md-12 pos-abs pos-b-15'>
+              <div className='screen-1 pos-abs pos-b-15'>
                 {this.renderTags(tags)}
-                <button
-                  type='button'
-                  className='btn btn-link text-white fs14 pos-abs pos-r-0'
-                >
+                <button type='button' className='button white-txt fs14 '>
                   #{ranking}
                 </button>
               </div>
             </div>
           </div>
 
-          <div className='card-body p-3'>
+          <div className='square-body'>
             <div className='row'>
-              <div className='col-md-9 col-xs-12'>
-                <h6 className='card-title text-truncate mr-3'>
+              <div className='screen-1-3'>
+                <span className='card-title truncate-txt mr3 fs18 d-block fw500'>
                   {college_name}
-                  <p>{this.renderRatings(rating)}</p>
-                </h6>
-                <p className='card-text'>
+                  <span className='ml2'>{this.renderRatings(rating)}</span>
+                </span>
+                <p className='fs13'>
                   {this.renderNearestPlaces(nearest_place)}
                 </p>
-                <p>
-                  <span className='text-success'>93% Match : </span>
+                <p className='fs13'>
+                  <span className='green-txt'>93% Match : </span>
                   {famous_nearest_places}
                 </p>
-                <p className='card-text offertxt mb-2'>{offertext}</p>
+                <p className='offertxt'>{offertext}</p>
               </div>
 
-              <div className='col-md-3 col-xs-12 text-right'>
-                <span className='card-text'>
+              <div className='screen-1-4 textright'>
+                <span className='fs18'>
                   <i className='fas fa-rupee-sign'></i>{' '}
                   <del>{original_fees}</del>
                   <i
-                    className='fas fa-tag text-danger ml-2'
+                    className='fas fa-tag red-txt ml2'
                     style={{ transform: 'rotate(-45deg)' }}
                   ></i>
-                  <span className='text-danger'>{discount}%</span>
+                  <span className='red-txt'>{discount}%</span>
                 </span>
                 <br />
-                <span className='card-text text-danger h2'>
+                <span className='red-txt fs25 d-block'>
                   <i className='fas fa-rupee-sign'></i> {discounted_fees}{' '}
                 </span>
                 <span>{fees_cycle}</span>
-                {/* <p className='card-text text-success'>
+                {/* <p className='green-txt'>
                   {this.renderEnemities(amenties)}
                 </p> */}
               </div>

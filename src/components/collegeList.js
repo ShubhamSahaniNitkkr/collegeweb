@@ -9,7 +9,7 @@ export default class ProductList extends Component {
       <React.Fragment>
         <Title name='Our' title='Top Colleges' />
 
-        <div className='row p5'>
+        <div className='row p-0-25'>
           <ProductConsumer>
             {(value) => {
               return value.colleges.map((college, idx) => {

@@ -9,7 +9,7 @@ export default class Default extends Component {
           </p>
           <p className='fs25'>
             The Requested URL &nbsp;
-            <span className='text-blue'>{this.props.location.pathname}</span>
+            <span className='blue-txt'>{this.props.location.pathname}</span>
             &nbsp; does not exist !
           </p>
         </div>
