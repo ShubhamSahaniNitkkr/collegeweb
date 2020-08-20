@@ -19,27 +19,6 @@ body {
   color: var(--mainDark) !important;
 }
 
-.fs14 {
-  font-size: 14px !important;
-}
-
-.pos-abs {
-  position: absolute !important;
-}
-
-.text-title {
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-}
-
-.text-blue {
-  color: var(--mainBlue);
-}
-
-.text-bright {
-  color: var(--lightBlue);
-}
-
 div {
   font-family: googlefont;
 }
@@ -49,6 +28,35 @@ code {
   background-color: red;
 }
 
+/* fonts  */
+.fs14 {
+  font-size: 14px !important;
+}
+
+/* padding */
+.pt4 {
+  padding-top: 1.5rem !important;
+}
+
+/* margins  */
+.mrauto {
+  margin-right: auto !important;
+}
+
+.p1 {
+  padding: 0.25rem !important;
+}
+
+.p5 {
+  padding: 3rem !important;
+}
+
+/* positions  */
+.pos-abs {
+  position: absolute !important;
+}
+
+/* flexbox  */
 .d-inline-block {
   display: inline-block;
 }
@@ -61,6 +69,7 @@ code {
   justify-content: flex-end;
 }
 
+/* positions  */
 .pos-r-0 {
   right: 0;
 }
@@ -75,6 +84,89 @@ code {
 
 .pos-b-15 {
   bottom: 15px;
+}
+
+/* text  */
+.text-title {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: var(--mainBlue);
+}
+
+.text-bright {
+  color: var(--lightBlue);
+}
+
+.textcenter {
+  text-align: center;
+}
+
+/* background  */
+.white-bg {
+  background-color: white !important;
+}
+
+/* font sizes  */
+.fs25 {
+  font-size: 25px;
+}
+
+.fs45 {
+  font-size: 45px;
+}
+
+/* orientation  */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.navbarnav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+}
+
+.navbarbrand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbarnav a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbarnav ul {
+  margin-top: 0;
+}
+
+.navmenu {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+/* components  */
+.top-navbar {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  display: flex;
+  position: relative;
+  background-color: white;
+  height: 55px;
 }
 
 .offertxt {
@@ -123,4 +215,18 @@ code {
 .tag-button {
   color: gray !important;
   border-radius: 20px !important;
+}
+
+.msgdanger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.msg {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
 }

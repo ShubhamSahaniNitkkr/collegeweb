@@ -5,14 +5,14 @@ import logo from '../logo.svg';
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+      <nav className='top-navbar'>
         <Link to='/'>
-          <img src={logo} alt='Ecommerce' className='navbar-brand' />
+          <img src={logo} alt='Ecommerce' className='navbarbrand' />
         </Link>
 
-        <ul className='navbar-nav mr-auto'>
-          <li className='nav-item active'>
-            <Link to='/' className='nav-link'>
+        <ul className='navbarnav mrauto'>
+          <li>
+            <Link to='/' className='navmenu'>
               College Web
             </Link>
           </li>

@@ -3,13 +3,13 @@ export default class Default extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='alert alert-danger text-center ' role='alert'>
-          <p className='h1'>
+        <div className='msg msgdanger textcenter ' role='alert'>
+          <p className='fs45'>
             ERROR : 404 <i className='fas fa-biohazard'></i>
           </p>
-          <p className='h5'>
+          <p className='fs25'>
             The Requested URL &nbsp;
-            <span className='text-info'>{this.props.location.pathname}</span>
+            <span className='text-blue'>{this.props.location.pathname}</span>
             &nbsp; does not exist !
           </p>
         </div>

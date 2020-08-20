@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Title({ name, title }) {
   return (
-    <h3 className='text-center py-4'>
+    <p className='textcenter pt4 fs25'>
       {name} {title}{' '}
-    </h3>
+    </p>
   );
 }
